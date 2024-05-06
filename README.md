@@ -1,5 +1,9 @@
 # NOAH_Sim
 
+requirements
+`chmod +x install_packages.sh`
+`bash -x ./install_packages.sh`
+
 名为"Noah"的系统架构，它包括容器、限制器、监视器等组件，并通过基于深度强化学习（DRL）的决策制定器来处理请求。要模拟这样的结构，你可以考虑以下步骤：
 
 1. 定义组件和数据流：
@@ -37,6 +41,10 @@ drl_model.py：定义深度强化学习模型。
 
 
 三个可运行文件：
+
 main.py：启动服务器
+
 train.py:训练模型
+
 train_example.py：模拟发送多个请求
+
