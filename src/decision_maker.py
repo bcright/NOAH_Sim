@@ -1,4 +1,4 @@
-from drl_model import DRLModel
+from src.models.drl_model import DRLModel
 
 class DecisionMaker:
     def __init__(self):

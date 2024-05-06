@@ -1,3 +1,4 @@
+import psutil
 class Monitor:
     def __init__(self):
         self.data = {
@@ -6,14 +7,16 @@ class Monitor:
             'successful_requests': 0
         }
 
-    def collect_cpu_usage(self, usage):
+    def collect_cpu_usage(self):
         """收集CPU使用率"""
+        usage = psutil.cpu_percent(interval=1)
+        print(usage)
         self.data['cpu_usage'].append(usage)
 
-    def log_request(self, successful=True):
+    def log_request(self, success=True):
         """记录请求数据"""
         self.data['request_count'] += 1
-        if successful:
+        if success:
             self.data['successful_requests'] += 1
     # def collect_data(self, data_point):
     #     self.data.append(data_point)
