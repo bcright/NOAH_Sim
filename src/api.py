@@ -20,3 +20,20 @@ def setup_routes(app, monitor, limiter):
         # 实际的业务逻辑处理，这里简单返回True作为示例
         return True
     
+def setup_routes_without_limiter(app, monitor):
+    @app.route('/')
+    def home():
+        return "Welcome to the Noah Simulation API!"
+
+    @app.route('/request', methods=['POST'])
+    def handle_request():
+
+        # 业务逻辑
+        success = process_request()
+        monitor.log_request(success=True)
+        return jsonify({"success": success})
+
+    def process_request():
+        # 实际的业务逻辑处理，这里简单返回True作为示例
+        return True
+    
